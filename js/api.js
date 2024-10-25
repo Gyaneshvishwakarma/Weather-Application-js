@@ -6,6 +6,8 @@ $(document).ready(function () {
 });
 
 async function weatherFn(cName) {
+    // Trim spaces from the city name
+    cName = cName.trim();
     const apiUrl = `${url}?q=${cName}&appid=${apiKey}&units=metric`;
     try {
         const res = await fetch(apiUrl);
