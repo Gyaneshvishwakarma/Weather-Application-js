@@ -1,0 +1,151 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(145deg, #1a1f3b, #283046);
+    background-size: 200% 200%;
+    animation: gradientAnimation 6s ease infinite;
+    color: #e0e0e0;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+}
+
+.weather-card {
+    background: rgba(32, 40, 66, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 20px;
+    width: 450px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out;
+    animation: fadeInCard 0.8s ease-out;
+}
+
+h1 {
+    color: #76c7c0;
+    margin-bottom: 10px;
+    animation: fadeInTitle 1s ease-out;
+}
+
+@keyframes fadeInTitle {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#city-input {
+    padding: 15px;
+    margin: 15px 0;
+    width: 70%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0f7fa;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#city-input:focus {
+    outline: none;
+    border-color: #76c7c0;
+    box-shadow: 0 0 10px rgba(118, 199, 192, 0.5);
+}
+
+#city-input::placeholder {
+    color: #b3c0c7;
+}
+
+#city-input-btn {
+    padding: 10px 20px;
+    background: linear-gradient(145deg, #76c7c0, #4fb5b0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s;
+    animation: fadeInButton 1.5s ease;
+}
+
+@keyframes fadeInButton {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#city-input-btn:hover {
+    background: linear-gradient(145deg, #4fb5b0, #76c7c0);
+}
+
+#weather-info {
+    display: none;
+    margin-top: 20px;
+    animation: fadeInInfo 1.2s ease forwards;
+}
+
+@keyframes fadeInInfo {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#weather-icon {
+    width: 80px;
+    height: 80px;
+    margin: 10px 0;
+    animation: fadeInWeatherIcon 1.5s ease;
+}
+
+@keyframes fadeInWeatherIcon {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#temperature {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 8px 0;
+    animation: bounceTemp 1s infinite alternate;
+}
+
+@keyframes bounceTemp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+#description {
+    font-size: 18px;
+    color: #cfd8dc;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    opacity: 0;
+    animation: fadeInDescription 1.2s ease forwards;
+}
+
+@keyframes fadeInDescription {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#wind-speed, #date {
+    font-size: 16px;
+    color: #90a4ae;
+    opacity: 0;
+    animation: fadeInExtraInfo 1.5s ease forwards;
+}
+
+@keyframes fadeInExtraInfo {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
